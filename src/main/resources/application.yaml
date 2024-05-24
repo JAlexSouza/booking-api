@@ -1,0 +1,13 @@
+server:
+  port: 8080
+
+spring:
+
+  application:
+    name: booking-api
+
+  #Postgres Database
+  r2dbc:
+    url: r2dbc:postgresql://localhost:15432/booking
+    username: alex
+    password: alex
