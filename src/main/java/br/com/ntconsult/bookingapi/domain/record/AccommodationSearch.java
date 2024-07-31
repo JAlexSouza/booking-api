@@ -7,7 +7,7 @@ import java.time.LocalDate;
 public record AccommodationSearch(State state,
                                   String city,
                                   Integer roomQuantity,
-                                  Integer maxCapacity,
+                                  Integer peopleAmount,
                                   LocalDate checkInDate,
                                   LocalDate checkOutDate
                                   ) {}

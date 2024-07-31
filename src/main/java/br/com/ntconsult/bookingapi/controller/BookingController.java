@@ -9,6 +9,7 @@ import br.com.ntconsult.bookingapi.service.BookingServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 import java.util.List;
@@ -23,7 +24,7 @@ public class BookingController {
     private BookingServiceImpl bookingService;
 
     @GetMapping
-    public Mono<ResponseEntity<List<AccommodationAvailableDTO>>> searchAccommodation(@RequestBody AccommodationSearch search){
+    public Flux<AccommodationAvailableDTO> searchAccommodation(@RequestBody AccommodationSearch search){
         return accommodationService.searchAccommodation(search);
     }
 

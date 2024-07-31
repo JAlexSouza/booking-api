@@ -1,13 +1,33 @@
 server:
   port: 8080
 
+logging:
+  level:
+    org:
+      springframework:
+        cache: TRACE
+
 spring:
 
   application:
     name: booking-api
+
+  cache:
+    type: redis
+    redis:
+      time-to-live: 60000
+
+  # Redis
+  spring:
+    redis:
+      host: localhost
+      port: 6379
 
   #Postgres Database
   r2dbc:
     url: r2dbc:postgresql://localhost:15432/booking
     username: alex
     password: alex
+  flyway:
+    url: jdbc:postgresql://localhost:15432/booking
+    locations: classpath:db/postgres/migration
